@@ -1,0 +1,72 @@
+﻿<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="modalbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">EID</th>
+            <th scope="col">ENAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">ESALARY</th>
+            <th scope="col">MANAGER</th>
+            <th scope="col">ACTION</th>
+        </tr>
+    </thead>
+    <tbody id="empdata">
+        <!-- Rows will be populated by JS -->
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-20" id="exampleModalLabel">FORM</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="empdets">
+                    <div class="form-group" id="id_div">
+                        <label for="eid">Employee ID</label>
+                        <input type="text" name="eid" class="form-control" id="eid" placeholder="Enter ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="ename">Name</label>
+                        <input type="text" name="ename" class="form-control" id="ename" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="esalary">Salary</label>
+                        <input type="text" name="esalary" class="form-control" id="esalary" placeholder="Enter Salary">
+                    </div>
+                    <div class="form-group">
+                        <label for="ManagerId">Managers</label>
+                        <select name="ManagerId" id="ManagerId" class="form-control" asp-items="ViewBag.managers">
+                            <option value="">-- Select --</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closemodal">Close</button>
+                <button type="button" class="btn btn-primary" id="savebtn">Save changes</button>
+                <button type="button" class="btn btn-primary" id="updbtn">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS & Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css">
+
+<!-- Your custom JS -->
+<script src="~/js/EmpMgr.js"></script>
